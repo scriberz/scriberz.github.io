@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Станислав Рожин — Fullstack-разработчик</title>
+<meta name="description" content="Fullstack-разработчик. Python / PHP · React / TypeScript · Flutter. Экосистема сервисов для e-commerce, интеграции маркетплейсов, AI на LLM.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💾</text></svg>">
+<style>
+  :root{
+    --bg:#0c0e12; --bg2:#12151b; --card:#161a22; --line:#242a35;
+    --txt:#e6e9ef; --mut:#9aa4b2; --acc:#7c5cff; --acc2:#22d3ee; --ok:#34d399;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  .eyebrow{color:var(--acc2);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+  h2{font-size:clamp(24px,4vw,34px);font-weight:750;letter-spacing:-.02em;margin-bottom:32px}
+
+  /* HERO */
+  .hero{position:relative;padding:96px 0 84px;border:0;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(600px 400px at 12% 0%,rgba(124,92,255,.22),transparent 60%),
+      radial-gradient(600px 400px at 90% 20%,rgba(34,211,238,.16),transparent 60%);
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);
+    padding:6px 14px;border-radius:999px;font-size:13px;color:var(--mut);margin-bottom:26px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(52,211,153,.18)}
+  .hero h1{font-size:clamp(38px,7vw,68px);line-height:1.03;font-weight:800;letter-spacing:-.03em}
+  .hero h1 .grad{background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .role{margin-top:18px;font-size:clamp(17px,2.4vw,21px);color:var(--mut);max-width:680px}
+  .cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px;
+    border:1px solid var(--line);transition:.18s;background:var(--card)}
+  .btn.primary{background:linear-gradient(100deg,var(--acc),#6a4bff);border-color:transparent;color:#fff}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary:hover{box-shadow:0 10px 30px -8px rgba(124,92,255,.6)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .stat .n{font-size:clamp(24px,4vw,32px);font-weight:800;background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .l{color:var(--mut);font-size:13px;margin-top:4px}
+
+  /* ABOUT */
+  .about p{color:var(--mut);font-size:17px;max-width:780px}
+  .about p+p{margin-top:16px}
+
+  /* EXPERIENCE */
+  .job{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;margin-bottom:18px;transition:.18s}
+  .job:hover{border-color:#38405020;box-shadow:0 12px 40px -20px rgba(0,0,0,.7)}
+  .job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+  .job-head h3{font-size:20px;font-weight:700}
+  .job-head .co{color:var(--acc2);font-weight:600}
+  .job-head .when{color:var(--mut);font-size:14px;white-space:nowrap}
+  .job .lead{color:var(--mut);font-size:14px;margin-top:6px;font-style:italic}
+  .job ul{list-style:none;margin-top:16px;display:grid;gap:11px}
+  .job li{position:relative;padding-left:22px;color:var(--mut);font-size:15px}
+  .job li::before{content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+  .job li b{color:var(--txt);font-weight:650}
+
+  /* PROJECTS */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:.18s}
+  .proj:hover{transform:translateY(-4px);border-color:#3a4256}
+  .proj .ico{font-size:26px;margin-bottom:12px}
+  .proj h3{font-size:18px;font-weight:700;margin-bottom:8px}
+  .proj p{color:var(--mut);font-size:14.5px;flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .tag{font-size:12px;color:var(--acc2);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.18);padding:3px 10px;border-radius:999px}
+
+  /* SKILLS */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .skillcat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .skillcat h4{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:13.5px;padding:6px 12px;border-radius:9px;background:var(--bg2);border:1px solid var(--line)}
+
+  /* CONTACT */
+  .contact{text-align:center;background:radial-gradient(700px 300px at 50% 0%,rgba(124,92,255,.14),transparent 65%)}
+  .contact h2{margin-bottom:12px}
+  .contact p{color:var(--mut);max-width:520px;margin:0 auto 30px}
+  .links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  footer{text-align:center;color:var(--mut);font-size:13px;padding:34px 0;border-top:1px solid var(--line)}
+
+  @media(max-width:720px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span> Открыт к предложениям · Удалённо</span>
+    <h1>Станислав Рожин<br><span class="grad">Fullstack-разработчик</span></h1>
+    <p class="role">Проектирую и вывожу в продакшн экосистемы сервисов: Python-бэкенд и интеграции маркетплейсов, Laravel + React-панели, Flutter-приложения и AI-системы на LLM. Стек — Python / PHP · TypeScript / React · Flutter.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact">Связаться →</a>
+      <a class="btn" href="#projects">Проекты</a>
+      <a class="btn" href="https://t.me/fnkyfd" target="_blank" rel="noopener">Telegram @fnkyfd</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">6</div><div class="l">боевых репозиториев в проде</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">языков программирования</div></div>
+      <div class="stat"><div class="n">15+</div><div class="l">внешних API-интеграций</div></div>
+      <div class="stat"><div class="n">5+</div><div class="l">LLM-провайдеров в работе</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap about">
+    <div class="eyebrow">Обо мне</div>
+    <h2>Веду задачи от анализа до деплоя</h2>
+    <p>Fullstack-разработчик-полиглот. За последний год в одиночку спроектировал и вывел в продакшн целую экосистему сервисов для e-commerce / GPS-компании: от Python-аналитики и интеграций с маркетплейсами до Laravel-бэкенда, Flutter-приложения и AI-системы клиентской поддержки на RAG.</p>
+    <p>Одинаково уверенно работаю на бэкенде (Python, PHP), фронте (React + TypeScript, Astro) и в мобильной разработке (Flutter/Dart). Много и предметно работаю с LLM-API — ассистенты, RAG, распознавание речи и изображений, генерация контента. Настраиваю CI/CD, Docker, systemd и серверную инфраструктуру на Linux.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Опыт работы</div>
+    <h2>Где и над чем работал</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div><h3>Fullstack / Backend-разработчик</h3><span class="co">GPS-glaz</span></div>
+        <span class="when">Май 2025 — наст. время</span>
+      </div>
+      <p class="lead">Единолично разработал и сопровождаю в продакшене экосистему сервисов на разных стеках:</p>
+      <ul>
+        <li><b>Платформа аналитики и автоматизации</b> (Python + PHP/MySQL): десятки сервисов-демонов и cron-задач, ежедневный сбор аналитики с API маркетплейсов, PHP-дашборды. Интеграции: Bitrix24, МойСклад, Ozon, Wildberries, Яндекс Маркет, RuStore, Navixy, Yandex Metrica. Синхронизация остатков (устранение overselling), парсинг внешнего трафика WB через headless-браузер с обходом антибот-защиты.</li>
+        <li><b>Центральный бэкенд и админ-панель</b> (Laravel 12 / PHP 8.2 + React 18 / TypeScript): бизнес-логика, API для мобильного приложения, админка для операторов, интеграции Navixy и SMS-шлюза Dinstar, секреты в HashiCorp Vault, push через FCM.</li>
+        <li><b>Мобильное приложение</b> (Flutter / Dart): мониторинг GPS-трекеров, Clean Architecture, flutter_bloc + freezed, карты MapLibre, реалтайм по WebSocket, AppMetrica.</li>
+        <li><b>AI-система клиентской поддержки</b> (Django / DRF + OpenAI): автоответчик в WhatsApp/Telegram через Chat2Desk, Assistants API, RAG по базе знаний, Whisper (аудио) и GPT Vision (фото).</li>
+        <li><b>Telegram-боты с AI</b>: авто-ответчик на отзывы маркетплейсов через GPT с очередью модерации; голосовой бот (Whisper → GPT).</li>
+        <li><b>Инфраструктура</b>: GitLab CI/CD, systemd, Docker, Nginx, PostgreSQL/MySQL, администрирование Linux + маркетинговый сайт на Astro.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><h3>Инженер сопровождения</h3><span class="co">Boxberry</span></div>
+        <span class="when">Янв 2024 — Июнь 2024</span>
+      </div>
+      <ul>
+        <li>Сопровождал интеграционные модули для CMS (WordPress, OpenCart, 1C-Битрикс) — стабильная работа API-взаимодействия с системой доставки.</li>
+        <li>Диагностировал проблемы API-интеграций: разбор логов, воспроизведение багов, эскалация в разработку.</li>
+        <li>Готовил технические описания дефектов и взаимодействовал с разработчиками для устранения инцидентов.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Проекты</div>
+    <h2>Что делал руками</h2>
+    <div class="grid">
+
+      <div class="proj">
+        <div class="ico">📊</div>
+        <h3>Платформа автоматизации e-commerce</h3>
+        <p>Десятки Python-сервисов и cron-задач: сбор аналитики с маркетплейсов в БД, синхронизация складов, PHP-дашборды, антибот-парсинг через Playwright. Деплой через GitLab CI и systemd.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">PHP · MySQL</span><span class="tag">Bitrix24 · МойСклад</span><span class="tag">Playwright</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="ico">⚙️</div>
+        <h3>Бэкенд + админ-панель GPS-glaz</h3>
+        <p>«Мозг» системы: доменная логика, API для мобилки, админка операторов. Интеграции GPS-платформы Navixy и SMS-шлюза Dinstar, секреты в Vault, push через FCM.</p>
+        <div class="tags"><span class="tag">Laravel 12</span><span class="tag">React · TS</span><span class="tag">Vault</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="ico">📱</div>
+        <h3>Мобильное приложение мониторинга</h3>
+        <p>B2C-приложение отслеживания GPS-трекеров: Clean Architecture, BLoC + freezed, карты MapLibre, реалтайм по WebSocket + polling, аналитика AppMetrica.</p>
+        <div class="tags"><span class="tag">Flutter · Dart</span><span class="tag">MapLibre</span><span class="tag">WebSocket</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="ico">🧠</div>
+        <h3>AI-поддержка клиентов (RAG)</h3>
+        <p>Автоответчик в WhatsApp/Telegram через Chat2Desk: OpenAI Assistants API, RAG по базе знаний (embeddings + векторный поиск), распознавание аудио (Whisper) и фото (Vision).</p>
+        <div class="tags"><span class="tag">Django · DRF</span><span class="tag">OpenAI</span><span class="tag">RAG</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="ico">🔎</div>
+        <h3>Tender-AI</h3>
+        <p>Платформа анализа госзакупок: React/TS-фронт, Express-бэкенд, PostgreSQL + Drizzle. GPT-анализ тендеров, поиск цен и поставщиков через OpenAI, Perplexity, Yandex Search, Tenderland.</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">React · Express</span><span class="tag">Perplexity</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="ico">🎬</div>
+        <h3>Podcast pipeline</h3>
+        <p>Конвейер генерации коротких видео: клонирование голоса (Coqui XTTS / torch), GPU-генерация визуала клеточных автоматов и фракталов (cupy/numba), сборка FFmpeg, автозалив в YouTube.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Coqui TTS · CUDA</span><span class="tag">FFmpeg</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="ico">🎮</div>
+        <h3>Игры: Goblin Adventure · ProteinInsider</h3>
+        <p>Нарративные игры: «Goblin Adventure» на Unity / C# с диалогами на Ink и релиз-сборкой под Steam, и «ProteinInsider» на движке Godot 4.5.</p>
+        <div class="tags"><span class="tag">Unity · C#</span><span class="tag">Godot</span><span class="tag">Ink</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="ico">🤖</div>
+        <h3>Telegram-боты с LLM</h3>
+        <p>Набор ботов: раскраска line-art через Google Gemini Image, стилизованные диалоговые боты, автопостинг с парсингом источников. Python + SQLite.</p>
+        <div class="tags"><span class="tag">Gemini</span><span class="tag">Telegram</span><span class="tag">Python</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Навыки</div>
+    <h2>Стек и инструменты</h2>
+    <div class="skills">
+      <div class="skillcat"><h4>Языки</h4><div class="chips"><span class="chip">Python</span><span class="chip">PHP</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Dart</span><span class="chip">SQL</span><span class="chip">C# / GDScript</span></div></div>
+      <div class="skillcat"><h4>Backend</h4><div class="chips"><span class="chip">Django · DRF</span><span class="chip">Laravel</span><span class="chip">Symfony</span><span class="chip">Yii2</span><span class="chip">Flask</span><span class="chip">aiogram</span><span class="chip">Express · Fastify</span></div></div>
+      <div class="skillcat"><h4>Frontend &amp; Mobile</h4><div class="chips"><span class="chip">React 18</span><span class="chip">Vite</span><span class="chip">Tailwind</span><span class="chip">Astro</span><span class="chip">Flutter · BLoC</span></div></div>
+      <div class="skillcat"><h4>Базы данных</h4><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">SQLite</span><span class="chip">Redis</span></div></div>
+      <div class="skillcat"><h4>AI &amp; LLM</h4><div class="chips"><span class="chip">OpenAI (GPT · Whisper · Vision)</span><span class="chip">Gemini</span><span class="chip">Perplexity</span><span class="chip">GigaChat</span><span class="chip">RAG</span><span class="chip">Coqui TTS</span></div></div>
+      <div class="skillcat"><h4>Интеграции</h4><div class="chips"><span class="chip">Bitrix24</span><span class="chip">МойСклад</span><span class="chip">Ozon · WB · Я.Маркет</span><span class="chip">Navixy</span><span class="chip">Dinstar</span><span class="chip">Chat2Desk</span><span class="chip">СДЭК</span><span class="chip">Telegram</span></div></div>
+      <div class="skillcat"><h4>DevOps</h4><div class="chips"><span class="chip">GitLab CI/CD</span><span class="chip">Docker</span><span class="chip">systemd</span><span class="chip">Nginx</span><span class="chip">Vault</span><span class="chip">Linux</span></div></div>
+      <div class="skillcat"><h4>Языки общения</h4><div class="chips"><span class="chip">Русский — родной</span><span class="chip">English — B1</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Образование</div>
+    <h2>Академический бэкграунд</h2>
+    <div class="job">
+      <div class="job-head"><div><h3>Магистр · Философия цифрового общества</h3><span class="co">Казанский федеральный университет</span></div><span class="when">2023</span></div>
+    </div>
+    <div class="job">
+      <div class="job-head"><div><h3>Бакалавр · Прикладная информатика в дизайне</h3><span class="co">Удмуртский государственный университет</span></div><span class="when">2020</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow">Контакты</div>
+    <h2>Давайте поработаем вместе</h2>
+    <p>Открыт к предложениям по fullstack- и backend-разработке. Удалённо, готов к командировкам.</p>
+    <div class="links">
+      <a class="btn primary" href="https://t.me/fnkyfd" target="_blank" rel="noopener">Telegram @fnkyfd</a>
+      <a class="btn" href="mailto:pinkssis@mail.ru">pinkssis@mail.ru</a>
+      <a class="btn" href="tel:+79655079331">+7 (965) 507-93-31</a>
+      <a class="btn" href="https://github.com/scriberz" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Станислав Рожин · Екатеринбург · Fullstack Developer</footer>
+
+</body>
+</html>
