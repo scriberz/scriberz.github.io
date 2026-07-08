@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Станислав Рожин — Software Engineer</title>
-<meta name="description" content="Software Engineer. Python / PHP · React / TypeScript · Flutter. Экосистема сервисов для e-commerce, интеграции маркетплейсов, AI на LLM.">
+<title>Станислав Рожин — AI / Backend Engineer</title>
+<meta name="description" content="AI / Backend Engineer. Python · LLM / RAG · интеграции. Продакшн AI-системы на OpenAI, ассистенты, RAG, распознавание речи и изображений.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💾</text></svg>">
 <style>
   :root{
@@ -12,7 +12,7 @@
     --txt:#e6e9ef; --mut:#9aa4b2; --acc:#7c5cff; --acc2:#22d3ee; --ok:#34d399;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;background:var(--bg)}
   body{
     background:var(--bg); color:var(--txt);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
@@ -29,8 +29,8 @@
   .hero::before{
     content:"";position:absolute;inset:0;z-index:0;
     background:
-      radial-gradient(600px 400px at 12% 0%,rgba(124,92,255,.22),transparent 60%),
-      radial-gradient(600px 400px at 90% 20%,rgba(34,211,238,.16),transparent 60%);
+      radial-gradient(700px 500px at 12% -5%,rgba(124,92,255,.24),transparent 60%),
+      radial-gradient(700px 500px at 88% 10%,rgba(34,211,238,.16),transparent 60%);
   }
   .hero .wrap{position:relative;z-index:1}
   .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.3);
@@ -54,6 +54,7 @@
   /* ABOUT */
   .about p{color:var(--mut);font-size:17px;max-width:780px}
   .about p+p{margin-top:16px}
+  .about b{color:var(--txt);font-weight:650}
 
   /* EXPERIENCE */
   .job{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;margin-bottom:18px;transition:.18s}
@@ -81,9 +82,11 @@
   /* SKILLS */
   .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
   .skillcat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .skillcat.feat{border-color:rgba(124,92,255,.4);background:linear-gradient(180deg,rgba(124,92,255,.08),var(--card))}
   .skillcat h4{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-bottom:14px}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chip{font-size:13.5px;padding:6px 12px;border-radius:9px;background:var(--bg2);border:1px solid var(--line)}
+  .skillcat.feat .chip{border-color:rgba(124,92,255,.25)}
 
   /* CONTACT */
   .contact{text-align:center;background:radial-gradient(700px 300px at 50% 0%,rgba(124,92,255,.14),transparent 65%)}
@@ -104,18 +107,18 @@
 <header class="hero">
   <div class="wrap">
     <span class="badge"><span class="dot"></span> Открыт к предложениям · Удалённо</span>
-    <h1>Станислав Рожин<br><span class="grad">Software Engineer</span></h1>
-    <p class="role">Проектирую и вывожу в продакшн экосистемы сервисов: Python-бэкенд и интеграции маркетплейсов, Laravel + React-панели, Flutter-приложения и AI-системы на LLM. Стек — Python / PHP · TypeScript / React · Flutter.</p>
+    <h1>Станислав Рожин<br><span class="grad">AI / Backend Engineer</span></h1>
+    <p class="role">Строю в продакшене AI-системы на LLM — ассистентов, RAG-поиск, распознавание речи и изображений — на сильной Python-бэкенд-базе. Интеграции, сервисы, деплой. Python · LLM / RAG · интеграции.</p>
     <div class="cta">
       <a class="btn primary" href="#contact">Связаться →</a>
       <a class="btn" href="#projects">Проекты</a>
       <a class="btn" href="https://t.me/fnkyfd" target="_blank" rel="noopener">Telegram @fnkyfd</a>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">6</div><div class="l">боевых репозиториев в проде</div></div>
-      <div class="stat"><div class="n">6</div><div class="l">языков программирования</div></div>
-      <div class="stat"><div class="n">15+</div><div class="l">внешних API-интеграций</div></div>
       <div class="stat"><div class="n">5+</div><div class="l">LLM-провайдеров в работе</div></div>
+      <div class="stat"><div class="n">RAG</div><div class="l">поиск по базе знаний в проде</div></div>
+      <div class="stat"><div class="n">15+</div><div class="l">внешних API-интеграций</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">боевых репозиториев</div></div>
     </div>
   </div>
 </header>
@@ -123,9 +126,9 @@
 <section class="about">
   <div class="wrap about">
     <div class="eyebrow">Обо мне</div>
-    <h2>Веду задачи от анализа до деплоя</h2>
-    <p>Software engineer широкого профиля. За последний год в одиночку спроектировал и вывел в продакшн целую экосистему сервисов для e-commerce / GPS-компании: от Python-аналитики и интеграций с маркетплейсами до Laravel-бэкенда, Flutter-приложения и AI-системы клиентской поддержки на RAG.</p>
-    <p>Одинаково уверенно работаю на бэкенде (Python, PHP), фронте (React + TypeScript, Astro) и в мобильной разработке (Flutter/Dart). Много и предметно работаю с LLM-API — ассистенты, RAG, распознавание речи и изображений, генерация контента. Настраиваю CI/CD, Docker, systemd и серверную инфраструктуру на Linux.</p>
+    <h2>Фокус — AI-инженерия и Python-бэкенд</h2>
+    <p>Инженер с фокусом на <b>AI / LLM-системах и Python-бэкенде</b>. Вывожу в продакшн AI-продукты: ассистентов и автоответчиков на OpenAI, RAG-поиск по базе знаний, распознавание речи (Whisper) и изображений (Vision), генерацию контента. Плотно работаю с пятью LLM-провайдерами — OpenAI, Gemini, Perplexity, DeepSeek, GigaChat.</p>
+    <p>Под этим — крепкая бэкенд-база: Python (Django/DRF, aiogram, aiohttp), проектирование сервисов, интеграции с внешними API, PostgreSQL, очереди, cron-демоны, CI/CD. При необходимости закрываю задачу целиком — фронт (React/TS) и мобилку (Flutter), — но ядро экспертизы и интереса это <b>AI и backend</b>.</p>
   </div>
 </section>
 
@@ -136,17 +139,16 @@
 
     <div class="job">
       <div class="job-head">
-        <div><h3>Software Engineer</h3><span class="co">GPS-glaz</span></div>
+        <div><h3>Software Engineer · AI / Backend</h3><span class="co">GPS-glaz</span></div>
         <span class="when">Май 2025 — наст. время</span>
       </div>
-      <p class="lead">Единолично разработал и сопровождаю в продакшене экосистему сервисов на разных стеках:</p>
+      <p class="lead">Единолично разработал и сопровождаю в продакшене несколько сервисов; ядро — AI и Python-бэкенд:</p>
       <ul>
-        <li><b>Платформа аналитики и автоматизации</b> (Python + PHP/MySQL): десятки сервисов-демонов и cron-задач, ежедневный сбор аналитики с API маркетплейсов, PHP-дашборды. Интеграции: Bitrix24, МойСклад, Ozon, Wildberries, Яндекс Маркет, RuStore, Navixy, Yandex Metrica. Синхронизация остатков (устранение overselling), парсинг внешнего трафика WB через headless-браузер с обходом антибот-защиты.</li>
-        <li><b>Центральный бэкенд и админ-панель</b> (Laravel 12 / PHP 8.2 + React 18 / TypeScript): бизнес-логика, API для мобильного приложения, админка для операторов, интеграции Navixy и SMS-шлюза Dinstar, секреты в HashiCorp Vault, push через FCM.</li>
-        <li><b>Мобильное приложение</b> (Flutter / Dart): мониторинг GPS-трекеров, Clean Architecture, flutter_bloc + freezed, карты MapLibre, реалтайм по WebSocket, AppMetrica.</li>
-        <li><b>AI-система клиентской поддержки</b> (Django / DRF + OpenAI): автоответчик в WhatsApp/Telegram через Chat2Desk, Assistants API, RAG по базе знаний, Whisper (аудио) и GPT Vision (фото).</li>
-        <li><b>Telegram-боты с AI</b>: авто-ответчик на отзывы маркетплейсов через GPT с очередью модерации; голосовой бот (Whisper → GPT).</li>
-        <li><b>Инфраструктура</b>: GitLab CI/CD, systemd, Docker, Nginx, PostgreSQL/MySQL, администрирование Linux + маркетинговый сайт на Astro.</li>
+        <li><b>AI-система клиентской поддержки</b> (Python · Django / DRF + OpenAI): автоответчик в WhatsApp/Telegram через Chat2Desk. OpenAI Assistants API, RAG по базе знаний (embeddings + векторный поиск), распознавание аудио (Whisper) и фото (GPT Vision).</li>
+        <li><b>AI-боты для маркетплейсов</b> (Python · aiogram): авто-ответчик на отзывы Ozon/WB/Яндекс Маркет/RuStore через GPT с очередью модерации; голосовой бот Whisper → GPT.</li>
+        <li><b>Платформа аналитики и автоматизации</b> (Python + PHP/MySQL): десятки сервисов и cron-задач, сбор аналитики с API маркетплейсов, синхронизация остатков (устранение overselling), парсинг внешнего трафика WB через headless-браузер с обходом антибота. Интеграции: Bitrix24, МойСклад, Ozon, WB, Яндекс Маркет, Navixy, Yandex Metrica.</li>
+        <li><b>Инфраструктура</b>: GitLab CI/CD, systemd, Docker, Nginx, PostgreSQL/MySQL, Linux, секреты в HashiCorp Vault.</li>
+        <li><b>Полный стек по необходимости</b>: бэкенд и админ-панель на Laravel 12 + React/TS (API для мобилки, интеграции Navixy и SMS-шлюза Dinstar, FCM), Flutter-приложение мониторинга GPS-трекеров, сайт на Astro.</li>
       </ul>
     </div>
 
@@ -171,27 +173,6 @@
     <div class="grid">
 
       <div class="proj">
-        <div class="ico">📊</div>
-        <h3>Платформа автоматизации e-commerce</h3>
-        <p>Десятки Python-сервисов и cron-задач: сбор аналитики с маркетплейсов в БД, синхронизация складов, PHP-дашборды, антибот-парсинг через Playwright. Деплой через GitLab CI и systemd.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">PHP · MySQL</span><span class="tag">Bitrix24 · МойСклад</span><span class="tag">Playwright</span></div>
-      </div>
-
-      <div class="proj">
-        <div class="ico">⚙️</div>
-        <h3>Бэкенд + админ-панель GPS-glaz</h3>
-        <p>«Мозг» системы: доменная логика, API для мобилки, админка операторов. Интеграции GPS-платформы Navixy и SMS-шлюза Dinstar, секреты в Vault, push через FCM.</p>
-        <div class="tags"><span class="tag">Laravel 12</span><span class="tag">React · TS</span><span class="tag">Vault</span></div>
-      </div>
-
-      <div class="proj">
-        <div class="ico">📱</div>
-        <h3>Мобильное приложение мониторинга</h3>
-        <p>B2C-приложение отслеживания GPS-трекеров: Clean Architecture, BLoC + freezed, карты MapLibre, реалтайм по WebSocket + polling, аналитика AppMetrica.</p>
-        <div class="tags"><span class="tag">Flutter · Dart</span><span class="tag">MapLibre</span><span class="tag">WebSocket</span></div>
-      </div>
-
-      <div class="proj">
         <div class="ico">🧠</div>
         <h3>AI-поддержка клиентов (RAG)</h3>
         <p>Автоответчик в WhatsApp/Telegram через Chat2Desk: OpenAI Assistants API, RAG по базе знаний (embeddings + векторный поиск), распознавание аудио (Whisper) и фото (Vision).</p>
@@ -201,29 +182,36 @@
       <div class="proj">
         <div class="ico">🔎</div>
         <h3>Tender-AI</h3>
-        <p>Платформа анализа госзакупок: React/TS-фронт, Express-бэкенд, PostgreSQL + Drizzle. GPT-анализ тендеров, поиск цен и поставщиков через OpenAI, Perplexity, Yandex Search, Tenderland.</p>
-        <div class="tags"><span class="tag">TypeScript</span><span class="tag">React · Express</span><span class="tag">Perplexity</span></div>
+        <p>Платформа анализа госзакупок: GPT-анализ тендеров, поиск цен и поставщиков через OpenAI, Perplexity, Yandex Search, DeepSeek; агент-роутер и планировщик. Python/Express + PostgreSQL.</p>
+        <div class="tags"><span class="tag">OpenAI · Perplexity</span><span class="tag">React · TS</span><span class="tag">Drizzle</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="ico">🤖</div>
+        <h3>AI-боты маркетплейсов</h3>
+        <p>Авто-ответчик на отзывы Ozon/WB/Яндекс Маркет/RuStore через GPT с очередью модерации и голосовой бот (Whisper → GPT-форматирование заметок). Python · aiogram.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">GPT · Whisper</span><span class="tag">aiogram</span></div>
       </div>
 
       <div class="proj">
         <div class="ico">🎬</div>
         <h3>Podcast pipeline</h3>
         <p>Конвейер генерации коротких видео: клонирование голоса (Coqui XTTS / torch), GPU-генерация визуала клеточных автоматов и фракталов (cupy/numba), сборка FFmpeg, автозалив в YouTube.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Coqui TTS · CUDA</span><span class="tag">FFmpeg</span></div>
+        <div class="tags"><span class="tag">Coqui TTS · CUDA</span><span class="tag">Python</span><span class="tag">FFmpeg</span></div>
       </div>
 
       <div class="proj">
-        <div class="ico">🎮</div>
-        <h3>Игры: Goblin Adventure · ProteinInsider</h3>
-        <p>Нарративные игры: «Goblin Adventure» на Unity / C# с диалогами на Ink и релиз-сборкой под Steam, и «ProteinInsider» на движке Godot 4.5.</p>
-        <div class="tags"><span class="tag">Unity · C#</span><span class="tag">Godot</span><span class="tag">Ink</span></div>
+        <div class="ico">📊</div>
+        <h3>Платформа автоматизации e-commerce</h3>
+        <p>Десятки Python-сервисов и cron-задач: сбор аналитики с маркетплейсов, синхронизация складов, PHP-дашборды, антибот-парсинг через Playwright. Деплой через GitLab CI и systemd.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Bitrix24 · МойСклад</span><span class="tag">Playwright</span></div>
       </div>
 
       <div class="proj">
-        <div class="ico">🤖</div>
-        <h3>Telegram-боты с LLM</h3>
-        <p>Набор ботов: раскраска line-art через Google Gemini Image, стилизованные диалоговые боты, автопостинг с парсингом источников. Python + SQLite.</p>
-        <div class="tags"><span class="tag">Gemini</span><span class="tag">Telegram</span><span class="tag">Python</span></div>
+        <div class="ico">⚙️</div>
+        <h3>Бэкенд + панель GPS-glaz</h3>
+        <p>Центральный бэкенд: доменная логика, API для мобилки, админка операторов. Интеграции GPS-платформы Navixy и SMS-шлюза Dinstar, секреты в Vault, push через FCM.</p>
+        <div class="tags"><span class="tag">Laravel 12</span><span class="tag">React · TS</span><span class="tag">Vault</span></div>
       </div>
 
     </div>
@@ -235,14 +223,13 @@
     <div class="eyebrow">Навыки</div>
     <h2>Стек и инструменты</h2>
     <div class="skills">
-      <div class="skillcat"><h4>Языки</h4><div class="chips"><span class="chip">Python</span><span class="chip">PHP</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Dart</span><span class="chip">SQL</span><span class="chip">C# / GDScript</span></div></div>
-      <div class="skillcat"><h4>Backend</h4><div class="chips"><span class="chip">Django · DRF</span><span class="chip">Laravel</span><span class="chip">Symfony</span><span class="chip">Yii2</span><span class="chip">Flask</span><span class="chip">aiogram</span><span class="chip">Express · Fastify</span></div></div>
-      <div class="skillcat"><h4>Frontend &amp; Mobile</h4><div class="chips"><span class="chip">React 18</span><span class="chip">Vite</span><span class="chip">Tailwind</span><span class="chip">Astro</span><span class="chip">Flutter · BLoC</span></div></div>
+      <div class="skillcat feat"><h4>★ AI / LLM — ядро</h4><div class="chips"><span class="chip">OpenAI (GPT · Assistants API)</span><span class="chip">Whisper</span><span class="chip">GPT Vision</span><span class="chip">Embeddings · RAG</span><span class="chip">Gemini</span><span class="chip">Perplexity</span><span class="chip">DeepSeek</span><span class="chip">GigaChat</span><span class="chip">Coqui TTS</span></div></div>
+      <div class="skillcat feat"><h4>★ Backend — ядро</h4><div class="chips"><span class="chip">Python</span><span class="chip">Django · DRF</span><span class="chip">aiogram · aiohttp</span><span class="chip">Flask</span><span class="chip">REST · вебхуки</span><span class="chip">очереди · cron</span><span class="chip">pydantic</span></div></div>
       <div class="skillcat"><h4>Базы данных</h4><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">SQLite</span><span class="chip">Redis</span></div></div>
-      <div class="skillcat"><h4>AI &amp; LLM</h4><div class="chips"><span class="chip">OpenAI (GPT · Whisper · Vision)</span><span class="chip">Gemini</span><span class="chip">Perplexity</span><span class="chip">GigaChat</span><span class="chip">RAG</span><span class="chip">Coqui TTS</span></div></div>
-      <div class="skillcat"><h4>Интеграции</h4><div class="chips"><span class="chip">Bitrix24</span><span class="chip">МойСклад</span><span class="chip">Ozon · WB · Я.Маркет</span><span class="chip">Navixy</span><span class="chip">Dinstar</span><span class="chip">Chat2Desk</span><span class="chip">СДЭК</span><span class="chip">Telegram</span></div></div>
+      <div class="skillcat"><h4>Интеграции</h4><div class="chips"><span class="chip">Bitrix24</span><span class="chip">МойСклад</span><span class="chip">Ozon · WB · Я.Маркет</span><span class="chip">Navixy</span><span class="chip">Dinstar</span><span class="chip">Chat2Desk</span><span class="chip">Telegram · Telethon</span></div></div>
       <div class="skillcat"><h4>DevOps</h4><div class="chips"><span class="chip">GitLab CI/CD</span><span class="chip">Docker</span><span class="chip">systemd</span><span class="chip">Nginx</span><span class="chip">Vault</span><span class="chip">Linux</span></div></div>
-      <div class="skillcat"><h4>Языки общения</h4><div class="chips"><span class="chip">Русский — родной</span><span class="chip">English — B1</span></div></div>
+      <div class="skillcat"><h4>Дополнительно (полный стек)</h4><div class="chips"><span class="chip">PHP · Laravel</span><span class="chip">TypeScript</span><span class="chip">React 18</span><span class="chip">Astro</span><span class="chip">Flutter · Dart</span></div></div>
+      <div class="skillcat"><h4>Языки общения</h4><div class="chips"><span class="chip">Русский — родной</span><span class="chip">English — B2</span></div></div>
     </div>
   </div>
 </section>
@@ -264,7 +251,7 @@
   <div class="wrap">
     <div class="eyebrow">Контакты</div>
     <h2>Давайте поработаем вместе</h2>
-    <p>Открыт к предложениям по backend- и продуктовой разработке. Удалённо, готов к командировкам.</p>
+    <p>Открыт к предложениям по AI / LLM и Python-бэкенд-разработке. Удалённо, готов к командировкам.</p>
     <div class="links">
       <a class="btn primary" href="https://t.me/fnkyfd" target="_blank" rel="noopener">Telegram @fnkyfd</a>
       <a class="btn" href="mailto:pinkssis@mail.ru">pinkssis@mail.ru</a>
@@ -274,7 +261,7 @@
   </div>
 </section>
 
-<footer>© 2026 Станислав Рожин · Екатеринбург · Software Engineer</footer>
+<footer>© 2026 Станислав Рожин · Екатеринбург · AI / Backend Engineer</footer>
 
 </body>
 </html>
